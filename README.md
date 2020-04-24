@@ -1,3 +1,8 @@
+This project is created for my own fun. 
+
+
+******************************************************************************************************
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
