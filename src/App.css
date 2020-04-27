@@ -1,8 +1,16 @@
-.App {
-  text-align: center;
+img, embed, 
+object, video {
+  max-width: 100%;
 }
 
-.App-logo {
+.App {
+  position: absolute;
+  width: 100%;  
+  text-align: center;
+  background-color: #d4d16d;
+}
+
+/*.App-logo {
   height: 40vmin;
   pointer-events: none;
 }
@@ -35,4 +43,4 @@
   to {
     transform: rotate(360deg);
   }
-}
+}*/
