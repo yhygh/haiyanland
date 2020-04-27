@@ -1,0 +1,79 @@
+.Home-container {
+  position: absolute;
+  background-color: #51803e;
+  min-height: 100vh; 
+  min-width: 100vw;
+}
+
+.Home-title {
+  font-size: 5vw;
+  margin-top: 2rem;
+  margin-bottom: 6vh;
+  font-weight: bold
+}
+
+.Home-bread-img {
+	top: 2vh;
+	max-width: 50%;
+    max-height: 50%;
+}
+
+ul#home-personitem {
+	list-style-type: none;
+	display: flex;
+	justify-content: space-evenly;
+	padding-inline-start: 0px;
+}
+
+ul#home-personitem li{
+    padding: 1.375rem 0;
+    font-size: 4vw;
+    font-weight: 600;
+}
+
+@media screen and (max-width: 400px) {
+  ul#home-personitem {
+	display: block;
+	list-style-type: none;
+  }	
+
+  ul#home-personitem li{
+	font-size: 5vw;
+  }
+
+}
+
+@media screen and (min-width: 700px) {
+	.Home-title {
+		font-size: 3vw;
+	}
+
+	.home-bread-img {
+	    max-height: 350px;
+	}
+
+	ul#home-personitem {
+		width: 50%;
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	ul#home-personitem li {
+		font-size: 2vw;
+	}
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .Home-bread-logo {
+    animation: bread-spin infinite 20s linear;
+  }
+}
+
+@keyframes bread-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

@@ -1,9 +1,13 @@
 import React from 'react';
-import logo from './logo.svg';
+// import logo from './logo.svg';
 import './App.css';
 
-import Top from './Top';
 
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
+
+import Home from './Home';
+import Haiyan from './Haiyan';
+import Shira from './Shira';
 
 /*
         <header className="App-header">
@@ -22,13 +26,21 @@ import Top from './Top';
         </header>
 */
 
+        // <Top />
+
 // Rewrite the function in a class
 class App extends React.Component {  
   render(){
     return (
       <div className="App">
-        <Top />
-
+        <BrowserRouter> 
+          <Switch>
+            <Route path='/' exact component={Home} />
+            <Route path='/haiyan' exact component={Haiyan} />
+            <Route path='/shira' exact component={Shira} />            
+            <Route path='/' render={ () => <div>404</div>} />
+          </Switch>
+        </BrowserRouter>
       </div>
     );
   }

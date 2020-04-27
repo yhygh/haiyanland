@@ -1,20 +1,23 @@
 import React from 'react';
 import bread from './bread.png';
 import './Top.css';
+import {Link} from 'react-router-dom';
 
 const items = [
   	{name: 'Haiyan',
-  	 page: 'Haiyan Page',
+  	 page: '/haiyan',
   	 img: './assets/haiyan/city.png'
     },
   	{name: 'Shira',
-  	 page: 'Shira Page',
+  	 page: '/shira',
   	 img: './assets/shira/running.jpg'
     }
   ];
 
 class Top extends React.Component {
   render() {
+  	  console.log(this.props.location);
+  	  console.log(this.props.match);
   	return (
       <nav>
         <div className="container">
@@ -26,7 +29,16 @@ class Top extends React.Component {
 	              {
 	              	items.map((person, index) => (
 	              		<li className="person" key={index}>
-	              		  <p>{person.name}'s World</p>
+	              		  <Link to={person.page}>{person.name}'s World</Link>
+	              		  <button
+	              		    onClick={ () => {
+                              // api call
+                              // change to a different page
+                              this.props.history.push('/haiyan');
+	              		    } }> 
+	              		    Click me to go to {person.name}
+	              		  </button>
+
 	              		</li>
 	              	))
 	              }
