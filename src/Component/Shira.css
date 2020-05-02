@@ -1,30 +1,4 @@
 /* TODO: these should be moved up one level, applies to all people */
-.person-container {
-  display: flex;
-  flex-wrap: wrap;
-  margin-block-start: 1rem;
-}
-
-.person-icon-title-container {
-  width: 100%;
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
-}
-
-#person-icon-container {
-  margin-inline-end: 2rem;
-}
-
-.person-title {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 6vw;
-  font-family: Arial;
-  margin-inline-start: 2rem;
-}
 
 @media screen and (min-width: 401px) {
   .person-img {
@@ -71,10 +45,6 @@
 
 }
 
-nav {
-	width: 100%;
-	padding: 2rem 1rem;
-}
 
 #navbar {
 	background-color: #7ebbd6;
@@ -82,20 +52,3 @@ nav {
 	min-height: 40px;
 	display: inline-block;
 }
-
-.person {
-	text-align: left;
-	font-size: 1.5rem;
-}
-
-/*ul {
-	list-style-type: none;
-	display: flex;
-	justify-content: space-evenly;
-	padding-inline-start: 0px;
-}
-
-ul#topitem li{
-	display: inline-block;
-    padding: 1.375rem 0;
-}*/

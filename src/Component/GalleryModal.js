@@ -39,9 +39,12 @@ export default class GalleryModal extends React.Component {
             {
               this.props.images.map( (image, i)=> (
                   <div key={i}>
-                     <img src={srcPrefix+image.src} 
+                    <img src={srcPrefix+image.src} 
                           onClick={()=>this.openModal(image, i)} 
                           alt={image.alt} />
+
+                      <p id="gallery-caption">{image.alt}</p>
+                  
                   </div>
                 ) )
             }

@@ -1,10 +1,31 @@
-nav {
-	width: 100%;
-	padding: 2rem 1rem;
+.person-icon-title-container {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
 }
 
-.container {
-	display: flex;
+#person-icon-container {
+  margin-inline-end: 2rem;  /* space between icon and title */
+  margin-block-start: 1rem;
+  margin-block-end: 1rem;    
+}
+
+.person-title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 6vw;
+  font-family: Arial;
+  margin-inline-start: 2rem;
+}
+
+nav {
+	width: 90%;
+	background-color: #7ebbd6;
+	min-height: 40px;
+	display: inline-block;    
 }
 
 #bread-icon {
@@ -27,13 +48,6 @@ nav {
   }
 }
 
-#navbar {
-	background-color: #7ebbd6;
-	width: 75%;
-	min-height: 40px;
-	display: inline-block;
-}
-
 .person {
 	text-align: left;
 	font-size: 1.5rem;
@@ -50,9 +64,10 @@ ul {
 	display: flex;
 	justify-content: space-evenly;
 	padding-inline-start: 0px;
+	margin-block-start: 0px;
+	margin-block-end: 0px;
 }
 
 ul#topitem li{
 	display: inline-block;
-    padding: 1.375rem 0;
 }
