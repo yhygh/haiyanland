@@ -31,6 +31,28 @@ ul#home-personitem li{
     font-weight: 600;
 }
 
+
+@media (prefers-reduced-motion: no-preference) {
+  .Home-bread-logo {
+    animation: bread-spin infinite 20s linear;
+  }
+}
+
+@keyframes bread-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+
+.person-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
 @media screen and (max-width: 400px) {
   ul#home-personitem {
 	display: block;
@@ -60,19 +82,4 @@ ul#home-personitem li{
 	ul#home-personitem li {
 		font-size: 2vw;
 	}
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .Home-bread-logo {
-    animation: bread-spin infinite 20s linear;
-  }
-}
-
-@keyframes bread-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
 }

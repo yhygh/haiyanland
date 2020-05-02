@@ -1,29 +1,39 @@
 import React from 'react';
-import bread from './bread.png';
 import './Top.css';
-import {Link} from 'react-router-dom';
-
-const items = [
-  	{name: 'Haiyan',
-  	 page: '/haiyan',
-  	 img: './assets/haiyan/city.png'
-    },
-  	{name: 'Shira',
-  	 page: '/shira',
-  	 img: './assets/shira/running.jpg'
-    }
-  ];
+// import {Link} from 'react-router-dom';
 
 class Top extends React.Component {
   render() {
   	  console.log(this.props.location);
   	  console.log(this.props.match);
+      console.log(this.props.topicon);
   	return (
+        <section className="person-icon-title-container">
+          <div id="person-icon-container">
+            <img src={this.props.topicon.src} className="person-img" alt={this.props.topicon.alt}/>
+          </div>
+          <div className="person-title">
+             <p>{this.props.topicon.pname}'s World</p>
+          </div>
+          <nav>
+                <ul id="topitem">
+                  {
+                    this.props.navitems.map((interest, index) => (
+                      <li className="person" key={index}>
+                        <p>{interest.name}</p>
+                      </li>
+                    ))
+                  }
+                </ul>
+          </nav>
+        </section>);
+  }
+}
+
+export default Top;
+
+/*
       <nav>
-        <div className="container">
-            <div id="bread-icon">
-                <img src={bread} className="bread-img bread-logo"/>
-            </div>
 	  		<div id="navbar">
 	  		  <ul id="topitem">
 	              {
@@ -44,10 +54,5 @@ class Top extends React.Component {
 	              }
 	  		  </ul>
 	  		</div>
-  		</div>
-  	  </nav>);
-  }
-
-}
-
-export default Top;
+  	  </nav>);	  		
+*/
