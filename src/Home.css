@@ -47,10 +47,17 @@ ul#home-personitem li{
   }
 }
 
+/* for off canvas hamburger menu */
+nav-hamburger {
+  width: 300px;
+  height: 100%;
+  position: absolute;
+  transform: translate(-300px, 0);
+  transition: transform 0.3s ease;
+}
 
-.person-container {
-  display: flex;
-  flex-wrap: wrap;
+nav-hamburger.open {
+  transform: translate(0, 0);
 }
 
 @media screen and (max-width: 400px) {
@@ -63,6 +70,13 @@ ul#home-personitem li{
 	font-size: 5vw;
   }
 }
+
+/*@media screen and (max-width: 400px) {
+  nav-hamburger {
+    position: relative;
+    transform: translate(0, 0);
+  }	
+}*/
 
 @media screen and (min-width: 700px) {
 	.Home-title {

@@ -6,8 +6,8 @@ import './App.css';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
 import Home from './Home';
-import Haiyan from './Component/Haiyan';
-import Shira from './Component/Shira';
+import Haiyan from './Components/Haiyan';
+import Shira from './Components/Shira';
 
 /*
         <header className="App-header">
