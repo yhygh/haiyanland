@@ -13,7 +13,7 @@ export default class GalleryModal extends React.Component {
     this.state = {
       imageModalIsOpen: false,
       modalImageName: "",
-      modalImageTitle: "No Title", 
+      modalImageTitle: "Untitled",
       modalImageIdx: 0
     };
   }
