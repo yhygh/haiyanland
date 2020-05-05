@@ -4,7 +4,6 @@ import Top from './Top/Top';
 import SideDrawer from './Top/SideDrawer';
 import Backdrop from './Common/Backdrop';
 import shiraicon from '../assets/shira/shira-icon.png';
-import './Shira.css';
 
 class Shira extends React.Component {
 
@@ -60,21 +59,20 @@ class Shira extends React.Component {
 
    backdropClickHandler = () => {
     this.setState( {sideDrawerOpen: false} );
-  } 
+  }
 
   render() {
-    let sideDrawer;
     let backdrop;
 
     if (this.state.sideDrawerOpen) {
-      sideDrawer = <SideDrawer navitems={this.state.navitems} />;
       backdrop = <Backdrop click={this.backdropClickHandler} />;
     }
 
   	return (
-      <div className="person-container">        
-        <Top topicon={this.state.iconSrc} navitems={this.state.navitems} drawerToggleClickHandler={this.drawerToggleClickHandler}/>
-        {sideDrawer}
+      <div id={this.state.iconSrc.pname} className="person-container">        
+        <Top topicon={this.state.iconSrc} navitems={this.state.navitems} 
+          drawerToggleClickHandler={this.drawerToggleClickHandler}/>
+        <SideDrawer show={this.state.sideDrawerOpen} navitems={this.state.navitems} />
         {backdrop}        
         <section id="main">
           <GalleryModal images={this.state.drawings} />
@@ -84,5 +82,3 @@ class Shira extends React.Component {
 }
 
 export default Shira;
-
-        // <SideDrawer navitems={this.state.navitems} />

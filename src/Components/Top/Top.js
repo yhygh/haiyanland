@@ -17,11 +17,11 @@ class Top extends React.Component {
             <div className="top_icon-container">
               <img src={this.props.topicon.src} alt={this.props.topicon.alt}/>
             </div>
-            <nav>
+            <nav className="top_nav-container">
                   <ul className="top_nav-items">
                     {
                       this.props.navitems.map((interest, index) => (
-                        <li className="person" key={index}>
+                        <li className="top_person" key={index}>
                           <p>{interest.name}</p>
                         </li>
                       ))

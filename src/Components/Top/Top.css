@@ -1,7 +1,7 @@
 .top_header-container {
   width: 100%;
   display: flex;
-  flex-wrap: wrap;
+/*  flex-wrap: wrap;*/
   align-items: center;
   justify-content: space-between;
 }
@@ -26,7 +26,7 @@ spacer {
   flex: 1;
 }
 
-nav {
+.top_nav-container {
   width: 70%;
   max-width: 600px;
   background-color: #7ebbd6;
@@ -58,13 +58,85 @@ nav {
   color: orange;
 }
 
-
 .top_person-title {
   font-size: 6vw;
   font-family: Arial;
 }
 
-.person {
+
+.top_person {
   text-align: left;
   font-size: 1.5rem;
+}
+
+#Haiyan .top_person {
+  font-size: 1rem;
+}
+
+
+@media screen and (min-width: 401px and max-width: 800px) {
+  .top_icon-container img {
+    max-height: 112px;
+  }  
+
+  #Haiyan .top_person {
+    font-size: 0.9rem;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .top_person-title {
+    font-weight: bold;  
+    font-size: 6vw;
+    width: 60vw;    
+    margin-inline-start: auto;
+    margin-inline-end: auto;  
+  }
+
+  .top_icon-container {
+    margin-inline-end: 0px;
+  }
+
+  .top_icon-container img {
+    width: 60vw;
+    max-height: unset;
+  }
+
+  .modal-content {
+    margin: 2% auto;
+    min-width: 90%;
+  }
+
+}
+
+@media screen and (max-width: 600px) {
+  .top_header-container {
+    flex-direction: column;
+  }
+
+  .top_nav-container {
+    display: none;
+  }  
+
+}
+
+@media screen and (min-width: 601px) {
+  .top_header-container {
+    flex-direction: row;
+  }
+
+  .side-drawer {
+    display: none;
+  }
+
+  .top_drawer-toggle-container {
+    display: none;
+  }
+
+}
+
+@media screen and (min-width: 801px) {
+  .top_person-title {
+    font-size: 2.5rem;  
+  }
 }
