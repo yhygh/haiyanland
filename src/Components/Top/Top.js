@@ -1,7 +1,9 @@
 import React from 'react';
 import './Top.css';
 import DrawerToggleButton from './DrawerToggleButton';
-// import {Link} from 'react-router-dom';
+import {
+  Link
+} from 'react-router-dom';
 
 class Top extends React.Component {
   render() {
@@ -22,15 +24,12 @@ class Top extends React.Component {
                     {
                       this.props.navitems.map((interest, index) => (
                         <li className="top_person" key={index}>
-                          <p>{interest.name}</p>
+                          <Link to={"/" + this.props.topicon.pname + interest.link}>{interest.name}</Link>
                         </li>
                       ))
                     }
                   </ul>
-            </nav> 
-          </div>
-          <div className="top_person-title">
-             <p>{this.props.topicon.pname}'s World</p>
+            </nav>
           </div>
         </section>);
   }
@@ -39,3 +38,6 @@ class Top extends React.Component {
 export default Top;
 
 //             <spacer></spacer>
+          // <div className="top_person-title">
+          //    <p>{this.props.topicon.pname}'s World</p>
+          // </div>

@@ -37,13 +37,13 @@ class App extends React.Component {
           <Switch>
             <Route path='/' exact component={Home} />
             <Route path='/haiyan' exact component={Haiyan} />
-            <Route path='/shira' exact component={Shira} />            
+            <Route path='/shira' exact component={Shira} />                    
             <Route path='/' render={ () => <div>404</div>} />
           </Switch>
         </BrowserRouter>
       </div>
     );
   }
-}
+}   
 
 export default App;
