@@ -1,4 +1,10 @@
 import React from 'react';
+import {
+  BrowserRouter as Router, 
+  Switch, 
+  Route 
+} from 'react-router-dom';
+
 import Top from './Top/Top';
 import bread from '../bread.png';
 import GalleryModal from './GalleryModal';
@@ -16,22 +22,18 @@ class Haiyan extends React.Component {
       ],
       navitems: [
         {name: 'Technology',
-         page: 'Haiyan Page',
-        },
-        {
-          name: 'Exercise',
-          page: 'Travel page',
-        },    
+         link: '/technology',
+        },   
         {name: 'Lazy Dishes',
-         page: 'Shira Page',
+         link: '/dishes',
         },
         {
-          name: 'Travel',
-          page: 'Travel page',
+          name: 'Geography',
+          link: '/geography',
         },
         {
-          name: 'Upcoming Features',
-          page: 'Feature Page',  
+          name: 'Coming Up',
+          link: '/comingup',  
         }
       ],
       iconSrc: {src: bread,
@@ -60,16 +62,27 @@ class Haiyan extends React.Component {
     }
 
   	return (
-      <div id={this.state.iconSrc.pname} className="person-container">
-
-        <Top topicon={this.state.iconSrc} navitems={this.state.navitems}
-          drawerToggleClickHandler={this.drawerToggleClickHandler} />
-        <SideDrawer show={this.state.sideDrawerOpen}  navitems={this.state.navitems}/>
-        {backdrop}
-        <GalleryModal images={this.state.dishes}/>
-      </div>);
+      <Router>
+        <div id={this.state.iconSrc.pname} className="person-container">
+          <Top topicon={this.state.iconSrc} navitems={this.state.navitems}
+            drawerToggleClickHandler={this.drawerToggleClickHandler} />
+          <SideDrawer show={this.state.sideDrawerOpen}  navitems={this.state.navitems}/>
+          {backdrop}
+          <Switch>
+            <Route path={"/" + this.state.iconSrc.pname + "/dishes"}> 
+              <GalleryModal images={this.state.dishes} intro="Intro Placeholder"/>
+            </Route>
+          </Switch>
+        </div>
+      </Router>);
   }
 
 }
 
 export default Haiyan;
+
+
+            // <Route path={"/" + this.state.iconSrc.pname} exact>
+            //   <HaiyanMain topicon={this.state.iconSrc}/>
+            // </Route>  
+            // <Route path={"/" + this.state.iconSrc.pname + "/geography"} component={HaiyanGeography} />
