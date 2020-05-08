@@ -7,6 +7,7 @@ import {
 
 class Top extends React.Component {
   render() {
+      console.log(`Inside Top, location, match, ...`);
       console.log(this.props.location);
       console.log(this.props.match);
       console.log(this.props.topicon);
@@ -24,7 +25,7 @@ class Top extends React.Component {
                     {
                       this.props.navitems.map((interest, index) => (
                         <li className="top_person" key={index}>
-                          <Link to={"/" + this.props.topicon.pname + interest.link}>{interest.name}</Link>
+                          <Link to={this.props.match.url + interest.link}>{interest.name}</Link>
                         </li>
                       ))
                     }
@@ -36,8 +37,3 @@ class Top extends React.Component {
 }
 
 export default Top;
-
-//             <spacer></spacer>
-          // <div className="top_person-title">
-          //    <p>{this.props.topicon.pname}'s World</p>
-          // </div>

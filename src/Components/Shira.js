@@ -6,7 +6,6 @@ import Backdrop from './Common/Backdrop';
 import shiraicon from '../assets/shira/shira-icon.png';
 
 import {
-  BrowserRouter as Router, 
   Switch, 
   Route 
 } from 'react-router-dom';
@@ -42,22 +41,18 @@ class Shira extends React.Component {
         {src:"unfinished.jpg", alt:"Unfinished"}        
       ],
       navitems: [
-        {name: 'Smile',
-         page: 'Haiyan Page',
+        {
+          name: 'Drawings',
+          link: '/gallery',
+        },      
+        {name: 'Laugh',
          link: '/shiralang',
         },
         {name: 'Language',
-         page: 'Shira Page',
          link: '/shiralang',
         },
         {
-          name: 'Drawings',
-          page: 'Travel page',
-          link: '/gallery',
-        },
-        {
           name: 'Coming up',
-          page: 'Feature Page',
           link: '/shiralang',  
         }
        ],
@@ -83,28 +78,36 @@ class Shira extends React.Component {
   render() {
     let backdrop;
 
+    let match = this.props.match;
+
     if (this.state.sideDrawerOpen) {
       backdrop = <Backdrop click={this.backdropClickHandler} />;
     }
 
+      console.log(`Shira page: ... `);
+      console.log(this.props.location);
+      console.log(this.props.match);  
+
   	return (
-      <Router>
+
         <div id={this.state.iconSrc.pname} className="person-container">        
           <Top topicon={this.state.iconSrc} navitems={this.state.navitems} 
+               match = {this.props.match}
             drawerToggleClickHandler={this.drawerToggleClickHandler}/>
-          <SideDrawer show={this.state.sideDrawerOpen} navitems={this.state.navitems} />
+          <SideDrawer show={this.state.sideDrawerOpen} topicon={this.state.iconSrc} 
+            navitems={this.state.navitems} />
           {backdrop}
           <Switch>
             <Route path={"/" + this.state.iconSrc.pname} exact>
               <ShiraMain topicon={this.state.iconSrc}/>
-            </Route>  
-            <Route path={"/" + this.state.iconSrc.pname + "/shiralang"} component={ShiraLanguage} />
-            <Route path={"/" + this.state.iconSrc.pname + "/gallery"}> 
+            </Route>
+            <Route path={`${match.path}/shiralang`} component={ShiraLanguage} />
+            <Route path={`${match.path}/gallery`}> 
               <GalleryModal images={this.state.drawings} intro={this.state.drawingsIntro}/>
             </Route>
           </Switch>
     	  </div>
-      </Router>);
+);
   }
 }
 
