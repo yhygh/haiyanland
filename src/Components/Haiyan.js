@@ -1,6 +1,5 @@
 import React from 'react';
 import {
-  BrowserRouter as Router, 
   Switch, 
   Route 
 } from 'react-router-dom';
@@ -9,7 +8,8 @@ import Top from './Top/Top';
 import bread from '../bread.png';
 import GalleryModal from './GalleryModal';
 import SideDrawer from './Top/SideDrawer';
-import BackDrop from './Common/Backdrop'
+import BackDrop from './Common/Backdrop';
+import HaiyanComingup from './Haiyan/HaiyanComingup';
 
 class Haiyan extends React.Component {
   constructor(props){
@@ -56,31 +56,31 @@ class Haiyan extends React.Component {
 
   render() {
     let backdrop;
+    let match = this.props.match;    
 
     if (this.state.sideDrawerOpen) {
       backdrop = (<BackDrop click={this.backdropClickHandler}/>);
     }
 
   	return (
-      <Router>
         <div id={this.state.iconSrc.pname} className="person-container">
           <Top topicon={this.state.iconSrc} navitems={this.state.navitems}
-            drawerToggleClickHandler={this.drawerToggleClickHandler} />
-          <SideDrawer show={this.state.sideDrawerOpen}  navitems={this.state.navitems}/>
+              match = {this.props.match}
+             drawerToggleClickHandler={this.drawerToggleClickHandler} />
+          <SideDrawer show={this.state.sideDrawerOpen} topicon={this.state.iconSrc} navitems={this.state.navitems}/>
           {backdrop}
           <Switch>
-            <Route path={"/" + this.state.iconSrc.pname + "/dishes"}> 
+            <Route path={`${match.url}/comingup`} component={HaiyanComingup} /> 
+            <Route path={`${match.url}/dishes`}> 
               <GalleryModal images={this.state.dishes} intro="Intro Placeholder"/>
             </Route>
           </Switch>
-        </div>
-      </Router>);
+        </div>);
   }
 
 }
 
 export default Haiyan;
-
 
             // <Route path={"/" + this.state.iconSrc.pname} exact>
             //   <HaiyanMain topicon={this.state.iconSrc}/>

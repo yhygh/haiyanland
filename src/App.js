@@ -36,9 +36,9 @@ class App extends React.Component {
         <BrowserRouter> 
           <Switch>
             <Route path='/' exact component={Home} />
-            <Route path='/haiyan' exact component={Haiyan} />
-            <Route path='/shira' exact component={Shira} />                    
-            <Route path='/' render={ () => <div>404</div>} />
+            <Route path='/haiyan' component={Haiyan} />
+            <Route path='/shira'  component={Shira} />
+            <Route path='/' render={ () => <div>404</div>} />            
           </Switch>
         </BrowserRouter>
       </div>
@@ -47,3 +47,4 @@ class App extends React.Component {
 }   
 
 export default App;
+

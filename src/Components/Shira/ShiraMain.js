@@ -8,7 +8,7 @@ const shiraMain = props => {
              <p>{props.topicon.pname}'s World</p>
           </div>
       <div className="topic-top">This is a place where I record some of Shira's stories.
-      I hope to make this website grow as Shira grows.</div>
+      I hope to make this website grow together with Shira.</div>
     </div>
   );
 }
