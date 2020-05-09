@@ -1,2 +1,10 @@
+.comingup-order-list {  
+  margin: 2em auto;
+  width: fit-content;
+}
 
-
+.comingup-order-list li {
+  list-style-type: disc;
+  text-align: left;
+  margin-bottom: 1em;
+}

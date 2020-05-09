@@ -18,7 +18,9 @@ class Top extends React.Component {
               <DrawerToggleButton click={this.props.drawerToggleClickHandler}/>
             </div>
             <div className="top_icon-container">
+              <Link to="/">
               <img src={this.props.topicon.src} alt={this.props.topicon.alt}/>
+              </Link>
             </div>
             <nav className="top_nav-container">
                   <ul className="top_nav-items">

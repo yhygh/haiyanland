@@ -31,6 +31,13 @@ ul#home-personitem li{
     font-weight: 600;
 }
 
+ul#home-personitem a{
+    text-decoration: none;
+}
+
+ul#home-personitem a:hover {
+    color: orange;
+}
 
 @media (prefers-reduced-motion: no-preference) {
   .Home-bread-logo {
