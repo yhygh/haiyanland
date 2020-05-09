@@ -6,10 +6,11 @@ import Backdrop from './Common/Backdrop';
 import shiraicon from '../assets/shira/shira-icon.png';
 
 import {
-  Switch, 
+  Switch,
   Route 
 } from 'react-router-dom';
 import ShiraLanguage from './Shira/ShiraLanguage';
+import ShiraLaugh from './Shira/ShiraLaugh';
 import ShiraMain from './Shira/ShiraMain';
 import GalleryModal from './GalleryModal';
 
@@ -46,7 +47,7 @@ class Shira extends React.Component {
           link: '/gallery',
         },      
         {name: 'Laugh',
-         link: '/shiralang',
+         link: '/shiralaugh',
         },
         {name: 'Language',
          link: '/shiralang',
@@ -102,6 +103,7 @@ class Shira extends React.Component {
               <ShiraMain topicon={this.state.iconSrc}/>
             </Route>
             <Route path={`${match.path}/shiralang`} component={ShiraLanguage} />
+            <Route path={`${match.path}/shiralaugh`} component={ShiraLaugh} />            
             <Route path={`${match.path}/gallery`}> 
               <GalleryModal images={this.state.drawings} intro={this.state.drawingsIntro}/>
             </Route>

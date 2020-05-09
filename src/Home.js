@@ -4,12 +4,12 @@ import './Home.css';
 import {Link} from 'react-router-dom';
 
 const items = [
-    {name: 'Haiyan',
-     page: '/haiyan',
-    },
     {name: 'Shira',
      page: '/shira',
-    }
+    },
+    {name: 'Haiyan',
+     page: '/haiyan',
+    }    
   ];
 
 class Home extends React.Component {
@@ -24,7 +24,7 @@ class Home extends React.Component {
           {
             items.map((person, index) => (
               <li key={index}>
-                <Link to={person.page}>{person.name}'s World</Link>
+                <Link to={person.page}>{person.name}</Link>
               </li>
             ))
           }
