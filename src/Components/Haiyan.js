@@ -12,9 +12,7 @@ import BackDrop from './Common/Backdrop';
 import HaiyanComingup from './Haiyan/HaiyanComingup';
 
 class Haiyan extends React.Component {
-  constructor(props){
-    super(props);
-    this.state = {
+  state = {
       sideDrawerOpen: false,
       dishes: [
         {src:"one.jpg", alt:"Drawings"},
@@ -41,7 +39,6 @@ class Haiyan extends React.Component {
                 pname: "Haiyan"}
 
     };
-  }
 
   drawerToggleClickHandler = () => {
     this.setState( (prevState) => {
