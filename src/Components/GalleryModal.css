@@ -6,7 +6,7 @@
 }
 
 .image-container div {
-  width: 300px;
+  flex-basis: 300px;  /* minimal img width */
   margin: 1vw;
   align-items: center;
   background-color: #714231;

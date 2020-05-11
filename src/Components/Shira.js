@@ -16,55 +16,57 @@ import GalleryModal from './GalleryModal';
 
 class Shira extends React.Component {
 
-  constructor(props){
-    super(props);
-    this.state = {
-      sideDrawerOpen: false,
-      drawings: [
-        {src:"running.jpg", alt:"Walking on the Street"},
-        {src:"family.jpg", alt:"Mommy Daddy and Me"},
-        {src:"one.jpg", alt:"Untitled"},
-        {src:"toothache.jpg", alt:"Toothache"},
-        {src:"lost.jpg", alt:"Lost in the Forest"},
-        {src:"angry.jpg", alt:"Angry"},
-        {src:"upset.jpg", alt:"Upset: Mommy is Busy"},
-        {src:"garageman.jpg", alt:"Car in Garage"},
-        {src:"ourhouse.jpg", alt:"Our House: Kitchen, Bedrooms and Garage"},
-        {src:"flyingman.jpg", alt:"Untitled"},                 
-        {src:"twoandhouse.jpg", alt:"Untitled"},
-        {src:"flyingXiannv.jpg", alt:"Untitled"},          
-        {src:"twoandletter.jpg", alt:"Letters Written by Shira"},
-        {src:"three.jpg", alt:"Untitled"},
-        {src:"oneandthree.jpg", alt:"Untitled"},
-        {src:"two.jpg", alt:"Untitled"},        
-        {src:"four.jpg", alt:"Untitled"},
-        {src:"many.jpg", alt:"Untitled"},
-        {src:"unfinished.jpg", alt:"Unfinished"}        
-      ],
-      navitems: [
-        {
-          name: 'Drawings',
-          link: '/gallery',
-        },      
-        {name: 'Laugh',
-         link: '/shiralaugh',
-        },
-        {name: 'Language',
-         link: '/shiralang',
-        },
-        {
-          name: 'Coming up',
-          link: '/shiralang',  
-        }
-       ],
-      iconSrc: {src: shiraicon,
-                alt: "Shira",
-                pname: "Shira"},
-      drawingsIntro: 'Shira drew the following works when ' 
-                     + 'she was three years and eight months old.' 
-                     + ' I chose her comment to each drawing as the title.',
-    };
-  }
+  state = {
+    sideDrawerOpen: false,
+    drawings: [
+      {src:"running.jpg", alt:"Walking on the Street"},
+      {src:"family.jpg", alt:"Mommy Daddy and Me"},
+      {src:"one.jpg", alt:"Untitled"},
+      {src:"girl_named.jpg", alt:"Girl named TFVUSTACVUT"},          
+      {src:"girl_in_rain.jpg", alt:"Girl in the Rain"},
+      {src:"wider.jpg", alt:"Untitled"},            
+      {src:"toothache.jpg", alt:"Toothache"},
+      {src:"lost.jpg", alt:"Lost in the Forest"},
+      {src:"angry.jpg", alt:"Angry"},
+      {src:"kids_tears.jpg", alt:"Kids in Tears"},           
+      {src:"upset.jpg", alt:"Upset: Mommy is Busy"},
+      {src:"youlechang.jpg", alt:"I want to go to the amusement park!"},       
+      {src:"garageman.jpg", alt:"Car in Garage"},
+      {src:"ourhouse.jpg", alt:"Our House: Kitchen, Bedrooms and Garage"},
+      {src:"flyingman.jpg", alt:"Untitled"},                 
+      {src:"twoandhouse.jpg", alt:"Untitled"},
+      {src:"flyingXiannv.jpg", alt:"Untitled"},          
+      {src:"twoandletter.jpg", alt:"Letters Written by Shira"},
+      {src:"three.jpg", alt:"Untitled"},
+      {src:"oneandthree.jpg", alt:"Untitled"},
+      {src:"two.jpg", alt:"Untitled"},        
+      {src:"four.jpg", alt:"Untitled"},
+      {src:"many.jpg", alt:"Untitled"},
+      {src:"unfinished.jpg", alt:"Unfinished"}        
+    ],
+    navitems: [
+      {
+        name: 'Drawings',
+        link: '/gallery',
+      },      
+      {name: 'Laugh',
+       link: '/shiralaugh',
+      },
+      {name: 'Language',
+       link: '/shiralang',
+      },
+      {
+        name: 'Coming up',
+        link: '/shiralang',  
+      }
+     ],
+    iconSrc: {src: shiraicon,
+              alt: "Shira",
+              pname: "Shira"},
+    drawingsIntro: 'Shira drew the following works when ' 
+                   + 'she was three years and eight months old.' 
+                   + ' I chose her comment to each drawing as the title.',
+  };
 
   drawerToggleClickHandler = () => {
     this.setState( (prevState) => {
