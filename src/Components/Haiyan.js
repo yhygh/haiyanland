@@ -11,6 +11,7 @@ import SideDrawer from './Top/SideDrawer';
 import BackDrop from './Common/Backdrop';
 import HaiyanComingup from './Haiyan/HaiyanComingup';
 import HaiyanMain from './Haiyan/HaiyanMain';
+import Footer from './Footer';
 
 class Haiyan extends React.Component {
   state = {
@@ -76,6 +77,7 @@ class Haiyan extends React.Component {
               <GalleryModal images={this.state.dishes} intro="Intro Placeholder"/>
             </Route>
           </Switch>
+          <Footer />
         </div>);
   }
 

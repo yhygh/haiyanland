@@ -19,19 +19,21 @@ class TechList extends React.Component {
 
   render() {
 	  return (
-      <div id="tech-main-grid">
-      	<h2 className="main-grid-item main-tech-title">Technology</h2>
-      	{
-      		TechData.map((category, idx) => (
-	      			<div key={idx} className="main-grid-item category-grid">
-                <div className="category-grid-item category-grid-item-title">{category.title}</div>
-                <div className="category-grid-item"> 
-                  {this.renderWebsiteList(category.links)}
-                </div>            
-	      			</div>
-      		))
-      	}
-      </div>
+	  	<div>
+	  		<h2 className="main-tech-title">Technology</h2>
+	      <div id="tech-main-grid">
+	      	{
+	      		TechData.map((category, idx) => (
+		      			<div key={idx} className="main-grid-item category-grid">
+	                <div className="category-grid-item category-grid-item-title">{category.title}</div>
+	                <div className="category-grid-item"> 
+	                  {this.renderWebsiteList(category.links)}
+	                </div>            
+		      			</div>
+	      		))
+	      	}
+	      </div>
+	    </div>
 	  );
 	}
 
