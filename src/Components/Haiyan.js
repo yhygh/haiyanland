@@ -10,6 +10,7 @@ import GalleryModal from './GalleryModal';
 import SideDrawer from './Top/SideDrawer';
 import BackDrop from './Common/Backdrop';
 import HaiyanComingup from './Haiyan/HaiyanComingup';
+import HaiyanMain from './Haiyan/HaiyanMain';
 
 class Haiyan extends React.Component {
   state = {
@@ -19,8 +20,8 @@ class Haiyan extends React.Component {
         {src:"two.jpg", alt:"Drawings"},
       ],
       navitems: [
-        {name: 'Technology',
-         link: '/technology',
+        {name: 'About',
+         link: '',
         },   
         {name: 'Lazy Dishes',
          link: '/dishes',
@@ -67,6 +68,9 @@ class Haiyan extends React.Component {
           <SideDrawer show={this.state.sideDrawerOpen} topicon={this.state.iconSrc} navitems={this.state.navitems}/>
           {backdrop}
           <Switch>
+            <Route path={"/" + this.state.iconSrc.pname} exact> 
+              <HaiyanMain topicon={this.state.iconSrc}/>
+            </Route>          
             <Route path={`${match.url}/comingup`} component={HaiyanComingup} /> 
             <Route path={`${match.url}/dishes`}> 
               <GalleryModal images={this.state.dishes} intro="Intro Placeholder"/>
@@ -78,8 +82,3 @@ class Haiyan extends React.Component {
 }
 
 export default Haiyan;
-
-            // <Route path={"/" + this.state.iconSrc.pname} exact>
-            //   <HaiyanMain topicon={this.state.iconSrc}/>
-            // </Route>  
-            // <Route path={"/" + this.state.iconSrc.pname + "/geography"} component={HaiyanGeography} />

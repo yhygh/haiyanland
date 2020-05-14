@@ -10,6 +10,8 @@ const haiyanComingup = props => {
         <li>Support Chinese translation</li>
         <li>Search Button</li>
         <li>User authorization</li>
+        <li>Move data to a database </li>
+        <li>Host it on my home server instead of firebase </li>
       </ol>
     </div>
   );

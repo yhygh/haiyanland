@@ -1,0 +1,43 @@
+#tech-main-grid {
+  max-width: 1000px;
+  margin: auto auto;
+  display: grid;
+  grid-row-gap: 1.5em;
+  grid-template-columns: auto auto auto;
+}
+
+#tech-main-grid .main-grid-item {
+/*  align-content: center;*/
+}
+
+.main-grid-item.main-tech-title {
+  grid-area: 1 / 1 / span 1 / span 3;
+}
+
+.category-grid {
+  background-color: rgba(40, 160, 160, 0.9);
+  margin: 10px;
+  grid-row-gap: 10px;
+  display: grid;
+  grid-template-rows: 2em auto;
+  align-content: start;
+  transition: all 1s ease;
+}
+
+.category-grid:hover {
+  width: 90vw;
+  max-width: 500px;
+}
+
+.category-grid .category-grid-item {
+  color: black;
+  text-align: left;
+
+  margin: 10px;
+  
+}
+
+.category-grid .category-grid-item-title {
+  font-weight: bold;
+  width: 30%;
+}
