@@ -1,0 +1,66 @@
+[
+    {
+        "title": "CSS",
+        "links": [
+            {"url": "https://www.youtube.com/watch?v=1Rs2ND1ryYc&feature=youtu.be",
+             "title": "CSS Tutorial - Zero to Hero",
+             "type": "video",
+             "comment": "slow, but offers a full picture"
+            },
+            {"url": "http://learnlayout.com/display.html",
+             "title": "Learn CSS Layout",     
+             "comment": "Short, clear, float"
+            }
+        ]
+    },
+    {
+        "title": "HTML",
+        "links": 
+          [
+            { "url": "http://google.com",
+              "title": "title placeholder",
+              "comment": "slow, but good to get a full picture"
+            },
+            { "url": "http://google.com",
+              "title": "title placeholder",
+              "comment": "slow, but good to get a full picture"
+            }            
+          ]
+    },
+    {
+        "title": "JavaScript",
+        "links": 
+          [
+            {"url": "http://google.com",
+             "title": "title placeholder",    
+             "comment": "slow, but good to get a full picture"}
+          ]
+    },
+    {
+        "title": "React",
+        "links": 
+          [ 
+            {"url": "http://google.com",
+             "title": "title placeholder",    
+             "comment": "slow, but good to get a full picture"}
+          ]
+    },
+    {
+        "title": "Network",
+        "links": 
+          [ 
+            {"url": "http://google.com",
+             "title": "title placeholder",    
+             "comment": "slow, but good to get a full picture"}
+          ]
+    },    
+    {
+        "title": "Algorithms",
+        "links": 
+          [ 
+            {"url": "http://google.com",
+             "title": "title placeholder",    
+             "comment": "slow, but good to get a full picture"}
+          ]
+    }    
+]

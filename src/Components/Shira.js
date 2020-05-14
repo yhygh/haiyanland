@@ -46,6 +46,10 @@ class Shira extends React.Component {
     ],
     navitems: [
       {
+        name: 'About',
+        link: '',
+      },       
+      {
         name: 'Drawings',
         link: '/gallery',
       },      
@@ -56,7 +60,7 @@ class Shira extends React.Component {
        link: '/shiralang',
       },
       {
-        name: 'Coming up',
+        name: 'Misc',
         link: '/shiralang',  
       }
      ],
@@ -101,12 +105,12 @@ class Shira extends React.Component {
             navitems={this.state.navitems} />
           {backdrop}
           <Switch>
-            <Route path={"/" + this.state.iconSrc.pname} exact>
+            <Route path={"/" + this.state.iconSrc.pname} exact> 
               <ShiraMain topicon={this.state.iconSrc}/>
             </Route>
             <Route path={`${match.path}/shiralang`} component={ShiraLanguage} />
             <Route path={`${match.path}/shiralaugh`} component={ShiraLaugh} />            
-            <Route path={`${match.path}/gallery`}> 
+            <Route path={`${match.path}/gallery`}>
               <GalleryModal images={this.state.drawings} intro={this.state.drawingsIntro}/>
             </Route>
           </Switch>
@@ -116,3 +120,5 @@ class Shira extends React.Component {
 }
 
 export default Shira;
+
+
