@@ -19,6 +19,12 @@
 .top_icon-container img {
   max-height: 144px;
   margin-left: 2rem;
+  transition: all 400ms ease;
+}
+
+.top_icon-container img:hover {
+  filter: grayscale(100%);
+  transform: scale(1.1);
 }
 
 spacer {

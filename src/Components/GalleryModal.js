@@ -5,7 +5,7 @@ import './GalleryModal.css';
 
 Modal.setAppElement('#root'); // suppresses modal-related test warnings.
 
-const srcPrefix = '../assets/shira/';
+const srcPrefix = '../assets/';
 
 export default class GalleryModal extends React.Component {
   constructor(props) {
@@ -19,13 +19,33 @@ export default class GalleryModal extends React.Component {
   }
 
   openModal = (image, idx) => {
-    let imgPath = srcPrefix + image.src;
+    let imgPath = srcPrefix + this.props.pname + '/' + image.src;
 
     this.setState({imageModalIsOpen: true, 
                    modalImageName: imgPath, 
                    modalImageTitle: image.alt, 
                    modalImageIdx: idx}
     );
+  }
+
+
+  // TODO: use prevState, see Haiyan.js
+  openPrev = () => {
+    let idx = this.state.modalImageIdx - 1;
+    if (idx === -1) {
+      idx = this.props.images.length-1;
+    }
+
+    this.openModal(this.props.images[idx], idx);
+  }
+
+  openNext = () => {
+    let idx = this.state.modalImageIdx + 1;
+    if (idx === this.props.images.length ) {
+      idx = 0;
+    }    
+
+    this.openModal(this.props.images[idx], idx);
   }
 
   closeModal = () => {
@@ -43,7 +63,7 @@ export default class GalleryModal extends React.Component {
           {
             this.props.images.map( (image, i)=> (
                 <div key={i}>
-                  <img src={srcPrefix+image.src} 
+                  <img src={srcPrefix+this.props.pname + '/' + image.src} 
                         onClick={()=>this.openModal(image, i)} 
                         alt={image.alt} />
 
@@ -64,8 +84,9 @@ export default class GalleryModal extends React.Component {
             <div className="caption-container">
               <p id="caption">{this.state.modalImageTitle}</p>
             </div>
+            <div id="prev" onClick={this.openPrev}>Prev</div>
+            <div id="prev" onClick={this.openNext}>Next</div>            
           </Modal>
-
         </div>
       </div>
     )

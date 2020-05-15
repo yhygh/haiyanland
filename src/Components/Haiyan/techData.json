@@ -10,7 +10,15 @@
             {"url": "http://learnlayout.com/display.html",
              "title": "Learn CSS Layout",     
              "comment": "Short, clear, float"
-            }
+            },
+            {"url": "https://css-tricks.com/auto-sizing-columns-css-grid-auto-fill-vs-auto-fit/",
+             "title": "Grid auto-fit vs auto-fill",     
+             "comment": "Short, clear"
+            },
+            {"url": "https://www.hongkiat.com/blog/css-grid-layout-minmax/",
+             "title": "Grid minmax()",     
+             "comment": "Short, clear"
+            }                   
         ]
     },
     {
