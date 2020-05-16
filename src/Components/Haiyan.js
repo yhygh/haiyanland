@@ -11,13 +11,13 @@ import SideDrawer from './Top/SideDrawer';
 import BackDrop from './Common/Backdrop';
 import HaiyanComingup from './Haiyan/HaiyanComingup';
 import HaiyanMain from './Haiyan/HaiyanMain';
+import Footer from './Footer';
 
 class Haiyan extends React.Component {
   state = {
       sideDrawerOpen: false,
       dishes: [
-        {src:"one.jpg", alt:"Drawings"},
-        {src:"two.jpg", alt:"Drawings"},
+        {src:"baked-sweet-peppers.jpg", alt:"Baked Sweet Peppers"}
       ],
       navitems: [
         {name: 'About',
@@ -37,7 +37,11 @@ class Haiyan extends React.Component {
       ],
       iconSrc: {src: bread,
                 alt: "Bread",
-                pname: "Haiyan"}
+                pname: "Haiyan"},
+      dishesIntro: 'a lazy dish in my dictionary means a dish that takes very little ' 
+                   + 'time to prepare but still delicious, ' 
+                   + 'which has always been my goal. '
+                   + 'More dishes and recipes will be added.',                
 
     };
 
@@ -65,17 +69,21 @@ class Haiyan extends React.Component {
           <Top topicon={this.state.iconSrc} navitems={this.state.navitems}
               match = {this.props.match}
              drawerToggleClickHandler={this.drawerToggleClickHandler} />
-          <SideDrawer show={this.state.sideDrawerOpen} topicon={this.state.iconSrc} navitems={this.state.navitems}/>
+          <SideDrawer show={this.state.sideDrawerOpen} 
+            topicon={this.state.iconSrc} 
+            navitems={this.state.navitems} 
+            click={this.backdropClickHandler}/>
           {backdrop}
           <Switch>
             <Route path={"/" + this.state.iconSrc.pname} exact> 
               <HaiyanMain topicon={this.state.iconSrc}/>
             </Route>          
-            <Route path={`${match.url}/comingup`} component={HaiyanComingup} /> 
+            <Route path={`${match.url}/comingup`} component={HaiyanComingup} />
             <Route path={`${match.url}/dishes`}> 
-              <GalleryModal images={this.state.dishes} intro="Intro Placeholder"/>
+              <GalleryModal images={this.state.dishes} intro={this.state.dishesIntro} pname="haiyan"/>
             </Route>
           </Switch>
+          <Footer />
         </div>);
   }
 

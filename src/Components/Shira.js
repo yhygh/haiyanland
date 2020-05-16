@@ -13,6 +13,7 @@ import ShiraLanguage from './Shira/ShiraLanguage';
 import ShiraLaugh from './Shira/ShiraLaugh';
 import ShiraMain from './Shira/ShiraMain';
 import GalleryModal from './GalleryModal';
+import Footer from './Footer';
 
 class Shira extends React.Component {
 
@@ -22,7 +23,7 @@ class Shira extends React.Component {
       {src:"running.jpg", alt:"Walking on the Street"},
       {src:"family.jpg", alt:"Mommy Daddy and Me"},
       {src:"one.jpg", alt:"Untitled"},
-      {src:"girl_named.jpg", alt:"Girl named TFVUSTACVUT"},          
+      {src:"girl_named.jpg", alt:"Girl named TFVUSTACVUT"},
       {src:"girl_in_rain.jpg", alt:"Girl in the Rain"},
       {src:"wider.jpg", alt:"Untitled"},            
       {src:"toothache.jpg", alt:"Toothache"},
@@ -102,7 +103,7 @@ class Shira extends React.Component {
                match = {this.props.match}
             drawerToggleClickHandler={this.drawerToggleClickHandler}/>
           <SideDrawer show={this.state.sideDrawerOpen} topicon={this.state.iconSrc} 
-            navitems={this.state.navitems} />
+            navitems={this.state.navitems} click={this.backdropClickHandler}/>
           {backdrop}
           <Switch>
             <Route path={"/" + this.state.iconSrc.pname} exact> 
@@ -111,11 +112,11 @@ class Shira extends React.Component {
             <Route path={`${match.path}/shiralang`} component={ShiraLanguage} />
             <Route path={`${match.path}/shiralaugh`} component={ShiraLaugh} />            
             <Route path={`${match.path}/gallery`}>
-              <GalleryModal images={this.state.drawings} intro={this.state.drawingsIntro}/>
+              <GalleryModal images={this.state.drawings} intro={this.state.drawingsIntro} pname="shira"/>
             </Route>
           </Switch>
-    	  </div>
-);
+          <Footer />
+    	  </div>);
   }
 }
 
