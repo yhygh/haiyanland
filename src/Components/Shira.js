@@ -103,7 +103,7 @@ class Shira extends React.Component {
                match = {this.props.match}
             drawerToggleClickHandler={this.drawerToggleClickHandler}/>
           <SideDrawer show={this.state.sideDrawerOpen} topicon={this.state.iconSrc} 
-            navitems={this.state.navitems} />
+            navitems={this.state.navitems} click={this.backdropClickHandler}/>
           {backdrop}
           <Switch>
             <Route path={"/" + this.state.iconSrc.pname} exact> 

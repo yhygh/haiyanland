@@ -69,7 +69,10 @@ class Haiyan extends React.Component {
           <Top topicon={this.state.iconSrc} navitems={this.state.navitems}
               match = {this.props.match}
              drawerToggleClickHandler={this.drawerToggleClickHandler} />
-          <SideDrawer show={this.state.sideDrawerOpen} topicon={this.state.iconSrc} navitems={this.state.navitems}/>
+          <SideDrawer show={this.state.sideDrawerOpen} 
+            topicon={this.state.iconSrc} 
+            navitems={this.state.navitems} 
+            click={this.backdropClickHandler}/>
           {backdrop}
           <Switch>
             <Route path={"/" + this.state.iconSrc.pname} exact> 

@@ -79,13 +79,17 @@ export default class GalleryModal extends React.Component {
             className="modal-content"
             overlayClassName="modal-overlay"
           >
-            <div id="close-modal" className="close" onClick={this.closeModal}>&times;</div>
-            <img src={this.state.modalImageName} alt="Drawings"/>
+            <div id="close-modal" className="close" onClick={this.closeModal}>&times;</div>          
             <div className="caption-container">
               <p id="caption">{this.state.modalImageTitle}</p>
-            </div>
-            <div id="prev" onClick={this.openPrev}>Prev</div>
-            <div id="prev" onClick={this.openNext}>Next</div>            
+            </div> 
+            <div className="prev-next">
+              <button id="prev" onClick={this.openPrev}>Prev</button>
+              <button id="next" onClick={this.openNext}>Next</button> 
+            </div> 
+            <div className="modal-image-container">            
+              <img src={this.state.modalImageName} alt="Drawings"/>
+            </div>                                  
           </Modal>
         </div>
       </div>

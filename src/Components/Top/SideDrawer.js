@@ -17,7 +17,7 @@ const sideDrawer = props => {
         {
           props.navitems.map((interest, index) => (
             <li key={index}>
-            <Link to={"/"+ props.topicon.pname + interest.link}>{interest.name}</Link>
+            <Link to={"/"+ props.topicon.pname + interest.link} onClick={props.click}>{interest.name}</Link>
             </li>
           ))
         }
