@@ -12,6 +12,7 @@ import {
 import ShiraLanguage from './Shira/ShiraLanguage';
 import ShiraLaugh from './Shira/ShiraLaugh';
 import ShiraMain from './Shira/ShiraMain';
+import ShiraMisc from './Shira/ShiraMisc';
 import GalleryModal from './GalleryModal';
 import Footer from './Footer';
 
@@ -62,7 +63,7 @@ class Shira extends React.Component {
       },
       {
         name: 'Misc',
-        link: '/shiralang',  
+        link: '/shiramisc',  
       }
      ],
     iconSrc: {src: shiraicon,
@@ -114,6 +115,7 @@ class Shira extends React.Component {
             <Route path={`${match.path}/gallery`}>
               <GalleryModal images={this.state.drawings} intro={this.state.drawingsIntro} pname="shira"/>
             </Route>
+            <Route path={`${match.path}/shiramisc`} component={ShiraMisc} />   
           </Switch>
           <Footer />
     	  </div>);
