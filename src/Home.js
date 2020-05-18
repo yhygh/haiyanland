@@ -29,6 +29,7 @@ class Home extends React.Component {
             ))
           }
         </ul>
+        <div>Birth of this Website</div>
       </div>
 
     );

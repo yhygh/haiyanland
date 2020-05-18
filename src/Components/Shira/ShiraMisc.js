@@ -1,10 +1,8 @@
 import React from 'react';
-import {useRouteMatch, Link} from "react-router-dom";
 // import './ShiraMisc.css';
 import './ShiraMain.css';
 
 export default function ShiraMisc(props) {
-  let match = useRouteMatch();
 
   return (
     <div>
