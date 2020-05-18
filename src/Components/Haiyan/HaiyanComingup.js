@@ -4,7 +4,7 @@ import './HaiyanComingup.css';
 const haiyanComingup = props => {  
   return (
     <div>
-      <ol class="comingup-order-list">
+      <ol className="comingup-order-list">
         <li>Add prev and next buttons for the gallery modal</li>
         <li>Support Chinese translation</li>
         <li>Search Button</li>

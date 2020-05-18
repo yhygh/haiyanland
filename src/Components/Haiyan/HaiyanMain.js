@@ -1,12 +1,8 @@
 import React from 'react';
-import {useRouteMatch, Link} from "react-router-dom";
-
 import TechList from './TechList';
-
 import './HaiyanMain.css';
 
 export default function HaiyanMain(props) {
-  let match = useRouteMatch();
 
   return (
     <div>

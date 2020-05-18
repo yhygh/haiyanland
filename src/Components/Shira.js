@@ -16,36 +16,13 @@ import ShiraMisc from './Shira/ShiraMisc';
 import GalleryModal from './GalleryModal';
 import Footer from './Footer';
 
+import DrawingData from '../assets/shira/json/drawingData.json';
+
 class Shira extends React.Component {
 
   state = {
     sideDrawerOpen: false,
-    drawings: [
-      {src:"running.jpg", alt:"Walking on the Street"},
-      {src:"family.jpg", alt:"Mommy Daddy and Me"},
-      {src:"one.jpg", alt:"Untitled"},
-      {src:"girl_named.jpg", alt:"Girl named TFVUSTACVUT"},
-      {src:"girl_in_rain.jpg", alt:"Girl in the Rain"},
-      {src:"wider.jpg", alt:"Untitled"},            
-      {src:"toothache.jpg", alt:"Toothache"},
-      {src:"lost.jpg", alt:"Lost in the Forest"},
-      {src:"angry.jpg", alt:"Angry"},
-      {src:"kids_tears.jpg", alt:"Kids in Tears"},           
-      {src:"upset.jpg", alt:"Upset: Mommy is Busy"},
-      {src:"youlechang.jpg", alt:"I want to go to the amusement park!"},       
-      {src:"garageman.jpg", alt:"Car in Garage"},
-      {src:"ourhouse.jpg", alt:"Our House: Kitchen, Bedrooms and Garage"},
-      {src:"flyingman.jpg", alt:"Untitled"},                 
-      {src:"twoandhouse.jpg", alt:"Untitled"},
-      {src:"flyingXiannv.jpg", alt:"Untitled"},          
-      {src:"twoandletter.jpg", alt:"Letters Written by Shira"},
-      {src:"three.jpg", alt:"Untitled"},
-      {src:"oneandthree.jpg", alt:"Untitled"},
-      {src:"two.jpg", alt:"Untitled"},        
-      {src:"four.jpg", alt:"Untitled"},
-      {src:"many.jpg", alt:"Untitled"},
-      {src:"unfinished.jpg", alt:"Unfinished"}        
-    ],
+    drawings: DrawingData,
     navitems: [
       {
         name: 'About',
