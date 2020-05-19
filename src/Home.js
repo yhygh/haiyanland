@@ -30,7 +30,7 @@ class Home extends React.Component {
   render() {
     let haiyanIntroModal;
     if (this.state.showModal) {
-      haiyanIntroModal = (<HaiyanOwnModal showModal={this.state.showModal} onClose={this.closeModal}/>);
+      haiyanIntroModal = (<HaiyanOwnModal onClose={this.closeModal}/>);      
     }
 
   	return (
@@ -49,7 +49,7 @@ class Home extends React.Component {
             ))
           }
         </ul>
-        <div><button onClick={this.openModal}>Birth of this Website</button></div>
+        <div className="home-button"><button onClick={this.openModal}>The Story of this Website</button></div>
         {haiyanIntroModal}
       </div>
 
