@@ -3,6 +3,8 @@ import bread from './bread.png';
 import './Home.css';
 import {Link} from 'react-router-dom';
 
+import HaiyanOwnModal from './Components/Common/HaiyanOwnModal';
+
 const items = [
     {name: 'Shira',
      page: '/shira',
@@ -13,8 +15,26 @@ const items = [
   ];
 
 class Home extends React.Component {
+  state = {
+    showModal: false
+  }
+
+  openModal = () => {
+    this.setState({showModal: true});
+  }
+
+  closeModal = () => {
+    this.setState({showModal: false});
+  }
+
   render() {
+    let haiyanIntroModal;
+    if (this.state.showModal) {
+      haiyanIntroModal = (<HaiyanOwnModal showModal={this.state.showModal} onClose={this.closeModal}/>);
+    }
+
   	return (
+
       <div className="Home-container">
         <div className="Home-title">Welcome to Our Land!</div>
         <div>
@@ -29,7 +49,8 @@ class Home extends React.Component {
             ))
           }
         </ul>
-        <div>Birth of this Website</div>
+        <div><button onClick={this.openModal}>Birth of this Website</button></div>
+        {haiyanIntroModal}
       </div>
 
     );
