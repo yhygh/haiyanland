@@ -2,7 +2,7 @@ import React from 'react';
 
 import './TechList.css';
 
-import TechData from './techData.json';
+import TechData from '../../assets/haiyan/json/techData.json';
 
 class TechList extends React.Component {
 
