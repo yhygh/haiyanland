@@ -12,7 +12,8 @@ const introParagraphs = [
             + "I know that from now on, web development is my passion. It will be my personal hobby and my career direction. "
             + " I will keep working on this website and adding more and more features. ",
         "If you like what I built, and would like me to join your team, "
-            + " please feel free to"        
+            + " please feel free to ",
+        "The skills that I used to build this website are as follows:"           
       ];
 
 const skills = ["React", "Responsive Design", "JavaScript", "HTML", "CSS", "JSX", "JSON"];
@@ -20,15 +21,16 @@ const skills = ["React", "Responsive Design", "JavaScript", "HTML", "CSS", "JSX"
 class HaiyanOwnModal extends React.Component {
 
 	renderContent(){
+
 		return ( 
 			<div className="haiyan-modal-content"> 
 	      { introParagraphs.map( (parag, idx) => (
-	      	<p key={idx}>{parag}  </p>
+	      	<p key={idx}>
+	      	  {parag} 
+	      	  {(idx === 2) ? ( <span><a href="mailto:haiyan.yang01@gmail.com">contact me</a>.</span>) : null } 
+	      	</p>
 	        ) )
         }
-         
-        <span><a href="mailto:haiyan.yang01@gmail.com">contact me</a>.</span>
-        <p>The skills that I used to build this website are as follows: </p>
 
 	  	  <ul>
 	        {skills.map((skill, i) => ( <li key={i}>{skill}</li> )) }

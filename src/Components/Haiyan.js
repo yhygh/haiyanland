@@ -57,7 +57,6 @@ class Haiyan extends React.Component {
     this.setState({sideDrawerOpen: false});
   }
 
-
   render() {
     let backdrop;
     let match = this.props.match;    
