@@ -17,5 +17,10 @@
   .footer {
   	flex-direction: column;
   }
+
+	.contact {
+	  margin-left: 0;
+	}
+
 }
 
