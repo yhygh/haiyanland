@@ -47,9 +47,10 @@ ul#home-personitem a:hover {
 .home-button button {
   border-color: rgb(209, 230, 28);
   background: rgba(209, 230, 28, 0.5);
-  font-size: 1rem;
+  font-size: 1.1rem;
   font-weight: 500;
   font-family: 'Kalam', cursive;
+  transition: all 1s ease-in-out;
 }
 
 .home-button button:hover {

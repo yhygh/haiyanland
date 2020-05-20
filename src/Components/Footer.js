@@ -4,7 +4,12 @@ import './Footer.css';
 
 const footer = props => (
   <div className="footer">
-        © 2020 Copyright Haiyan Yang
+    <div className="copyright">© 2020 Copyright Haiyan Yang</div>
+    <div className="contact">
+        <a href="mailto:haiyan.yang01@gmail.com">
+          Email Haiyan
+        </a>
+    </div>
   </div>
 );
 

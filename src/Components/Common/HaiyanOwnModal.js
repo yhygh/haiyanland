@@ -2,18 +2,17 @@ import React from 'react';
 import './HaiyanOwnModal.css';
 
 const introParagraphs = [
-        "   As a software engineer who has been both a developer and a testing engineer, "
-            + " worked in many areas including network, database, system, web development, and GIS; " 
-            + "backend and front end; I have always been wondering which area I should "
-            + "excel the most and specialize in. ",  
+        "   I am a software engineer who has developed and tested both front-end and backend "
+            + "features of multiple products, "
+            + " and worked in many areas including network, database, system, web development, and GIS." 
+            + " I have been exploring how to best leverage my talents going forward.",
         "When the shelter-in-place started, "
-            + "I decided to build a personal website that I had long wanted to do but never had time. " 
-            + "That did it. I just can't stop working on it once I started. It brought me so much joy. "
-            + "I know that from now on, web development is my passion. It'll be my personal hobby and my career direction. "
+            + "I decided to build a personal website that I had long wanted to do but for which I never had time. " 
+            + "I just can't stop working on it once I started. It brought me so much joy. "
+            + "I know that from now on, web development is my passion. It will be my personal hobby and my career direction. "
             + " I will keep working on this website and adding more and more features. ",
-        "If you like what I built, and would like me to join your team. "
-            + " Please contact me at haiyan.yang01@gmail.com.",
-        "The skills that I used to build this website are as follows: "
+        "If you like what I built, and would like me to join your team, "
+            + " please feel free to"        
       ];
 
 const skills = ["React", "Responsive Design", "JavaScript", "HTML", "CSS", "JSX", "JSON"];
@@ -24,9 +23,12 @@ class HaiyanOwnModal extends React.Component {
 		return ( 
 			<div className="haiyan-modal-content"> 
 	      { introParagraphs.map( (parag, idx) => (
-	      	<p key={idx}>{parag}</p>
+	      	<p key={idx}>{parag}  </p>
 	        ) )
         }
+         
+        <span><a href="mailto:haiyan.yang01@gmail.com">contact me</a>.</span>
+        <p>The skills that I used to build this website are as follows: </p>
 
 	  	  <ul>
 	        {skills.map((skill, i) => ( <li key={i}>{skill}</li> )) }
@@ -46,4 +48,3 @@ class HaiyanOwnModal extends React.Component {
 }
 
 export default HaiyanOwnModal;
- //       <div className="haiyan-modal-content">{this.renderSkills()}</div>
