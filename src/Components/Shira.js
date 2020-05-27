@@ -70,9 +70,9 @@ class Shira extends React.Component {
       backdrop = <Backdrop click={this.backdropClickHandler} />;
     }
 
-      console.log(`Shira page: ... `);
-      console.log(this.props.location);
-      console.log(this.props.match);  
+      // console.log(`Shira page: ... `);
+      // console.log(this.props.location);
+      // console.log(this.props.match);  
 
   	return (
 
