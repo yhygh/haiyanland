@@ -2,12 +2,12 @@ import React from 'react';
 // import logo from './logo.svg';
 import './App.css';
 
-
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
 import Home from './Home';
 import Haiyan from './Components/Haiyan';
 import Shira from './Components/Shira';
+
 
 /*
         <header className="App-header">
@@ -28,9 +28,14 @@ import Shira from './Components/Shira';
 
         // <Top />
 
+
 // Rewrite the function in a class
-class App extends React.Component {  
+class App extends React.Component {
+
   render(){
+
+  const currCounter = state => ({counter: state.counter});
+
     return (
       <div className="App">
         <BrowserRouter> 

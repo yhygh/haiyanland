@@ -11,7 +11,7 @@ import SideDrawer from './Top/SideDrawer';
 import BackDrop from './Common/Backdrop';
 import HaiyanComingup from './Haiyan/HaiyanComingup';
 import HaiyanMain from './Haiyan/HaiyanMain';
-// import Geography from './Haiyan/Geography';
+import Geography from './Haiyan/Geography';
 
 import Footer from './Footer';
 
@@ -80,6 +80,7 @@ class Haiyan extends React.Component {
               <HaiyanMain topicon={this.state.iconSrc}/>
             </Route>        
             <Route path={`${match.url}/comingup`} component={HaiyanComingup} />
+            <Route path={`${match.url}/geography`} component={Geography} />            
             <Route path={`${match.url}/dishes`}> 
               <GalleryModal images={this.state.dishes} intro={this.state.dishesIntro} pname="haiyan"/>
             </Route>
