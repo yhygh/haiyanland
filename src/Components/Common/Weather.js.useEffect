@@ -1,0 +1,53 @@
+import React, { useState, useEffect } from 'react';
+
+import axios from 'axios';
+
+function Weather() {
+  const [loading, setLoading] = useState(false);
+
+  const [requestData, setRequestData] = useState({
+  	temperature: null,
+  	short:       '',
+  	detailed:    '',
+  	periods:     [],
+  });
+
+  useEffect( () => {
+    	setLoading(true);
+
+    	axios
+    		.get('https://api.weather.gov/gridpoints/MTR/86,125/forecast')
+    		.then(res => {
+    			setRequestData({
+    				temperature: res.data.properties.periods[0].temperature,
+    				short: res.data.properties.periods[0].shortForecast,
+    				detailed: res.data.properties.periods[0].detailedForecast,
+    				periods: [...res.data.properties.periods],
+    			}); 			   
+
+          console.log("try print out array data ...");
+          console.log(res.data.properties.periods);
+    			console.log(requestData.periods); 			
+          setLoading(false);
+    		})
+    		.catch(err => {
+  				console.log(err);
+   			});
+  }, [] ) // useEffect
+
+  if (loading) {
+  	return (<p>Loading weather data from National Weather Service</p>);
+  }
+
+  return (
+    <div>
+      <p>Current Conditions at A San Francisco Neighborbood</p>
+      Temperature: {requestData.temperature}
+      <p>{requestData.short}</p>
+      <p>{requestData.detailed}</p>
+ 
+    </div>
+  )
+}
+//      <p>{requestData.periods[1].temperature}</p>     
+export default Weather;

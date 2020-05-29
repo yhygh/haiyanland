@@ -25,13 +25,13 @@ class Haiyan extends React.Component {
         {name: 'About',
          link: '',
         },   
-        {name: 'Lazy Dishes',
-         link: '/dishes',
-        },
         {
           name: 'Geography',
           link: '/geography',
         },
+        {name: 'Lazy Dishes',
+         link: '/dishes',
+        },        
         {
           name: 'Coming Up',
           link: '/comingup',  

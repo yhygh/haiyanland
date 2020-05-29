@@ -3,7 +3,6 @@
 	width: 90vw;
 	max-width: 1100px;
 	margin: auto auto;
-/*	background-color: #bed1e0;*/
 	display: grid;
 	grid-row-gap: 20px;
 	grid-column-gap: 20px;
@@ -13,7 +12,7 @@
 .day-grid {
 	padding: 1em 1em;
 	display: grid;
-	background-color: #bed1e0;	
+	background-color: #efeeec;
 	grid-template-rows: 40px 20px 80px auto;
 	grid-row-gap: 1em;
 }
@@ -21,6 +20,11 @@
 .day-grid img {
 	width: 88px;
 	height: 88px;
+}
+
+.night {
+	background-color: rgba(0, 0, 0, 0.8);
+	color: rgb(255, 255, 255);
 }
 
 .period-name {
@@ -31,8 +35,6 @@
 .period-detailed {
 	width: 90px;
 	height: 10px;
-/*	white-space: nowrap;
-	overflow: hidden;*/
 	text-overflow: ellipsis;
 }
 
