@@ -16,7 +16,7 @@ const introParagraphs = [
         "The skills that I used to build this website are as follows:"           
       ];
 
-const skills = ["React", "Responsive Design", "JavaScript", "HTML", "CSS", "JSX", "JSON"];
+const skills = ["React", "Responsive Design", "JavaScript", "REST", "HTML", "CSS", "JSX", "JSON"];
 
 class HaiyanOwnModal extends React.Component {
 

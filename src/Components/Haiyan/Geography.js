@@ -14,7 +14,9 @@ export default class Geography extends React.Component<{}, State> {
     // )
     return (
          <div> 
-            <h2> Weather Forecast for a Neighborhood in San Francisco</h2>
+            <h3> Weather Forecast for a Neighborhood</h3>
+            <p>in</p>
+
             <Weather />
 
          </div>
