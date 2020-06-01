@@ -57,6 +57,10 @@ class Haiyan extends React.Component {
     this.setState({sideDrawerOpen: false});
   }
 
+  componentWillUnmount() {
+    console.log(`Component will unmount in Haiyan.js`);
+  }
+
   render() {
     let backdrop;
     let match = this.props.match;    

@@ -53,6 +53,10 @@ export default class GalleryModal extends React.Component {
     );
   }
 
+  componentWillUnmount() {
+    console.log(`Component will unmount in GalleryModal.js`);
+  }
+
   render() {
     return (
       <div className="gallery-container">

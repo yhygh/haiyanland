@@ -61,6 +61,10 @@ class Shira extends React.Component {
     this.setState( {sideDrawerOpen: false} );
   }
 
+  componentWillUnmount() {
+    console.log(`Component will unmount in Shira.js`);
+  }
+
   render() {
     let backdrop;
 

@@ -1,6 +1,8 @@
 import React, {useState} from 'react';
 import './Dropdown.css';
 
+//TODO: make this component generic 
+
 function Dropdown( {title, items, parentFunc, multiSelect=false} ) {
   const [open, setOpen]= useState(false);
   const [selection, setSelection] = useState([]);
@@ -20,10 +22,10 @@ function Dropdown( {title, items, parentFunc, multiSelect=false} ) {
   		let prevSelection = selection;
   		let afterRemovalSelection = prevSelection.filter( elem => elem.city !== item.city );
 
-        if (afterRemovalSelection.length >= 1) {
-  			setSelection([...afterRemovalSelection]);        	
-        	parentFunc(afterRemovalSelection[0].id);
-        } 
+      if (afterRemovalSelection.length >= 1) {
+			   setSelection([...afterRemovalSelection]);        	
+      	 parentFunc(afterRemovalSelection[0].id);
+      } 
   	}
   }
 
