@@ -1,4 +1,5 @@
 import React, {useState} from 'react';
+import onClickOutside from 'react-onclickoutside';
 import './Dropdown.css';
 
 //TODO: make this component generic 
@@ -8,6 +9,8 @@ function Dropdown( {title, items, parentFunc, multiSelect=false} ) {
   const [selection, setSelection] = useState([]);
 
   const toggle = () => setOpen(!open);
+
+  Dropdown.handleClickOutside = () => setOpen(false);
 
   function handleItemClick(item) {
 
@@ -60,7 +63,13 @@ function Dropdown( {title, items, parentFunc, multiSelect=false} ) {
   	</div>
 
   )
-
 }
 
-export default Dropdown;
+const clickOutsideConfig = {
+  handleClickOutside: () => Dropdown.handleClickOutside,
+}
+//  or 
+//   handleClickOutside: function(instance) { return Dropdown.handleClickOutside; }
+// https://github.com/Pomax/react-onclickoutside/issues/307
+
+export default onClickOutside(Dropdown, clickOutsideConfig);
