@@ -13,7 +13,7 @@ import ShiraLanguage from './Shira/ShiraLanguage';
 import ShiraLaugh from './Shira/ShiraLaugh';
 import ShiraMain from './Shira/ShiraMain';
 import ShiraMisc from './Shira/ShiraMisc';
-import GalleryModal from './GalleryModal';
+import ShiraDrawings from './Shira/ShiraDrawings';
 import Footer from './Footer';
 
 import DrawingData from '../assets/shira/json/drawingData.json';
@@ -76,10 +76,9 @@ class Shira extends React.Component {
 
       // console.log(`Shira page: ... `);
       // console.log(this.props.location);
-      // console.log(this.props.match);  
+      // console.log(this.props.match);
 
   	return (
-
         <div id={this.state.iconSrc.pname} className="person-container">        
           <Top topicon={this.state.iconSrc} navitems={this.state.navitems} 
                match = {this.props.match}
@@ -94,7 +93,7 @@ class Shira extends React.Component {
             <Route path={`${match.path}/shiralang`} component={ShiraLanguage} />
             <Route path={`${match.path}/shiralaugh`} component={ShiraLaugh} />            
             <Route path={`${match.path}/gallery`}>
-              <GalleryModal images={this.state.drawings} intro={this.state.drawingsIntro} pname="shira"/>
+              <ShiraDrawings images={this.state.drawings} intro={this.state.drawingsIntro} pname="shira"/>
             </Route>
             <Route path={`${match.path}/shiramisc`} component={ShiraMisc} />   
           </Switch>
@@ -104,5 +103,3 @@ class Shira extends React.Component {
 }
 
 export default Shira;
-
-

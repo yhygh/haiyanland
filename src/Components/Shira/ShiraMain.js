@@ -22,7 +22,7 @@ export default function ShiraMain(props) {
 		        Navigate to <Link to={`${match.url}/gallery`}>Drawings</Link> to see her progress in eight months.
 		      </div>
 	      </div>
-	  </div>
+	    </div>
     </div>
   );
 }
