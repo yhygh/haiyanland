@@ -1,6 +1,6 @@
 import React from 'react';
 
-function withGallery(WrappedComponent, srcPrefix) {
+function withGallery(WrappedComponent, srcPrefix, images) {
 	class newComponent extends React.Component {
 
     state = {
@@ -21,7 +21,6 @@ function withGallery(WrappedComponent, srcPrefix) {
 	                   modalImageIdx: idx}
 	    );
 
-	    console.log(`in withGallery openModal imageModalIsOpen: ${this.state.imageModalIsOpen}`);
 	  }
 
 
@@ -29,19 +28,19 @@ function withGallery(WrappedComponent, srcPrefix) {
 	  openPrev = () => {
 	    let idx = this.state.modalImageIdx - 1;
 	    if (idx === -1) {
-	      idx = this.props.images.length-1;
+	      idx = images.length-1;	      
 	    }
 
-	    this.openModal(this.props.images[idx], idx);
+	    this.openModal(images[idx], idx);	    
 	  }
 
 	  openNext = () => {
 	    let idx = this.state.modalImageIdx + 1;
-	    if (idx === this.props.images.length ) {
+	    if (idx === images.length ) {	    	
 	      idx = 0;
 	    }    
 
-	    this.openModal(this.props.images[idx], idx);
+	    this.openModal(images[idx], idx);
 	  }
 
 	  closeModal = () => {

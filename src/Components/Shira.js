@@ -16,13 +16,10 @@ import ShiraMisc from './Shira/ShiraMisc';
 import ShiraDrawings from './Shira/ShiraDrawings';
 import Footer from './Footer';
 
-import DrawingData from '../assets/shira/json/drawingData.json';
-
 class Shira extends React.Component {
 
   state = {
     sideDrawerOpen: false,
-    drawings: DrawingData,
     navitems: [
       {
         name: 'About',
@@ -46,9 +43,6 @@ class Shira extends React.Component {
     iconSrc: {src: shiraicon,
               alt: "Shira",
               pname: "Shira"},
-    drawingsIntro: 'Shira drew the following works when ' 
-                   + 'she was three years and eight months old.' 
-                   + ' I chose her comment to each drawing as the title.',
   };
 
   drawerToggleClickHandler = () => {
@@ -93,7 +87,7 @@ class Shira extends React.Component {
             <Route path={`${match.path}/shiralang`} component={ShiraLanguage} />
             <Route path={`${match.path}/shiralaugh`} component={ShiraLaugh} />            
             <Route path={`${match.path}/gallery`}>
-              <ShiraDrawings images={this.state.drawings} intro={this.state.drawingsIntro} pname="shira"/>
+              <ShiraDrawings pname="shira"/>
             </Route>
             <Route path={`${match.path}/shiramisc`} component={ShiraMisc} />   
           </Switch>

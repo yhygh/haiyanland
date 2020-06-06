@@ -5,33 +5,34 @@ import withGallery from '../Common/withGallery';
 
 import '../GalleryModal.css';
 
-import DrawingData from '../../assets/shira/json/drawingData.json';
-
 Modal.setAppElement('#root'); // suppresses modal-related test warnings.
 
 const srcPrefix = '../../assets/';
 
-const drawingsIntro = 'Shira drew the following works when ' 
-                   + 'she was three years and eight months old.' 
-                   + ' I chose her comment to each drawing as the title.';
+const dishesIntro = 'a lazy dish in my dictionary means a dish that takes very little ' 
+                   + 'time to prepare but still delicious, ' 
+                   + 'which has always been my goal. '
+                   + 'More dishes and recipes will be added.';
 
-class ShiraDrawings extends React.Component {
+const dishes = [
+        {src:"baked-sweet-peppers.jpg", alt:"Baked Sweet Peppers"}
+      ];                
+
+class HaiyanDishes extends React.Component {
 
   componentDidUpdate(prevProps, prevState) {
-    console.log(`inside ShiraLanguage.js componentDidUpdate ... `);
+    console.log(`inside HaiyanDishes.js componentDidUpdate ... `);
   }
 
   render() {
-    let images = DrawingData;
-
     return (
       <div className="gallery-container">
         <div className="topic-top">
-          {drawingsIntro}
+          {dishesIntro}
         </div>
         <div className="image-container">
           {
-            images.map( (image, i)=> (
+            dishes.map( (image, i)=> (
                 <div key={i}>
                   <img src={srcPrefix+this.props.pname + '/' + image.src} 
                         onClick={()=>this.props.openModal(image, i)} 
@@ -52,7 +53,7 @@ class ShiraDrawings extends React.Component {
             <div id="close-modal" className="close" onClick={this.props.closeModal}>&times;</div>          
             <div className="caption-container">
               <p id="caption">{this.props.modalImageTitle}</p>
-            </div> 
+            </div>
             <div className="prev-next">
               <button id="prev" onClick={this.props.openPrev}>Prev</button>
               <button id="next" onClick={this.props.openNext}>Next</button> 
@@ -67,4 +68,4 @@ class ShiraDrawings extends React.Component {
   }
 }
 
-export default withGallery(ShiraDrawings, srcPrefix, DrawingData);
+export default withGallery(HaiyanDishes, srcPrefix, dishes);
