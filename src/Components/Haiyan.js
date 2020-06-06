@@ -6,21 +6,18 @@ import {
 
 import Top from './Top/Top';
 import bread from '../bread.png';
-import GalleryModal from './GalleryModal';
 import SideDrawer from './Top/SideDrawer';
 import BackDrop from './Common/Backdrop';
 import HaiyanComingup from './Haiyan/HaiyanComingup';
 import HaiyanMain from './Haiyan/HaiyanMain';
 import Geography from './Haiyan/Geography';
+import HaiyanDishes from './Haiyan/HaiyanDishes';
 
 import Footer from './Footer';
 
 class Haiyan extends React.Component {
   state = {
       sideDrawerOpen: false,
-      dishes: [
-        {src:"baked-sweet-peppers.jpg", alt:"Baked Sweet Peppers"}
-      ],
       navitems: [
         {name: 'About',
          link: '',
@@ -39,12 +36,7 @@ class Haiyan extends React.Component {
       ],
       iconSrc: {src: bread,
                 alt: "Bread",
-                pname: "Haiyan"},
-      dishesIntro: 'a lazy dish in my dictionary means a dish that takes very little ' 
-                   + 'time to prepare but still delicious, ' 
-                   + 'which has always been my goal. '
-                   + 'More dishes and recipes will be added.',                
-
+                pname: "Haiyan"}
     };
 
   drawerToggleClickHandler = () => {
@@ -86,7 +78,7 @@ class Haiyan extends React.Component {
             <Route path={`${match.url}/comingup`} component={HaiyanComingup} />
             <Route path={`${match.url}/geography`} component={Geography} />            
             <Route path={`${match.url}/dishes`}> 
-              <GalleryModal images={this.state.dishes} intro={this.state.dishesIntro} pname="haiyan"/>
+              <HaiyanDishes pname="haiyan"/>
             </Route>
 
           </Switch>
