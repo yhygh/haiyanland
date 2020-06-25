@@ -3,12 +3,12 @@ import React from 'react';
 function withGallery(WrappedComponent, srcPrefix, images) {
 	class newComponent extends React.Component {
 
-    state = {
-      imageModalIsOpen: false,
-      modalImageName: "",
-      modalImageTitle: "Untitled",
-      modalImageIdx: 0
-    };
+	  state = {
+	    imageModalIsOpen: false,
+	    modalImageName: "",
+        modalImageTitle: "Untitled",
+        modalImageIdx: 0
+      };
 
 	  openModal = (image, idx) => {
 	    let imgPath = srcPrefix + this.props.pname + '/' + image.src;
@@ -22,7 +22,6 @@ function withGallery(WrappedComponent, srcPrefix, images) {
 	    );
 
 	  }
-
 
 	  // TODO: use prevState, see Haiyan.js
 	  openPrev = () => {
@@ -48,20 +47,20 @@ function withGallery(WrappedComponent, srcPrefix, images) {
 	    );
 	  }
 
-		render() {
-			return (
-				<WrappedComponent 
-				  {...this.props}
-				  imageModalIsOpen={this.state.imageModalIsOpen}
-				  modalImageName={this.state.modalImageName}
-				  modalImageTitle={this.state.modalImageTitle}
-          openModal={this.openModal}
-          openPrev={this.openPrev}
-          openNext={this.openNext}
-          closeModal={this.closeModal}
-       />
-	    )
-		}
+      render() {
+		return (
+			<WrappedComponent 
+			  {...this.props}
+			  imageModalIsOpen={this.state.imageModalIsOpen}
+			  modalImageName={this.state.modalImageName}
+			  modalImageTitle={this.state.modalImageTitle}
+      		  openModal={this.openModal}
+              openPrev={this.openPrev}
+              openNext={this.openNext}
+              closeModal={this.closeModal}
+            />
+        )
+	  }
 
 	}
 

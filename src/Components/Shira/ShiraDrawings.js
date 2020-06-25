@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component, Fragment } from 'react';
 import Modal from 'react-modal';
 
 import withGallery from '../Common/withGallery';
@@ -15,7 +15,7 @@ const drawingsIntro = 'Shira drew the following works when '
                    + 'she was three years and eight months old.' 
                    + ' I chose her comment to each drawing as the title.';
 
-class ShiraDrawings extends React.Component {
+class ShiraDrawings extends Component {
 
   componentDidUpdate(prevProps, prevState) {
     console.log(`inside ShiraLanguage.js componentDidUpdate ... `);
@@ -25,7 +25,7 @@ class ShiraDrawings extends React.Component {
     let images = DrawingData;
 
     return (
-      <div className="gallery-container">
+      <Fragment>
         <div className="topic-top">
           {drawingsIntro}
         </div>
@@ -62,7 +62,7 @@ class ShiraDrawings extends React.Component {
             </div>                                  
           </Modal>
         </div>
-      </div>
+      </Fragment>
     )
   }
 }

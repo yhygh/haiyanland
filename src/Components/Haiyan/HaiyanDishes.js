@@ -1,24 +1,37 @@
-import React from 'react';
+import React, { Component, Fragment } from 'react';
 import Modal from 'react-modal';
 
 import withGallery from '../Common/withGallery';
 
-import '../GalleryModal.css';
+// import '../GalleryModal.css';
+import './HaiyanDishes.css';
 
 Modal.setAppElement('#root'); // suppresses modal-related test warnings.
 
 const srcPrefix = '../../assets/';
 
-const dishesIntro = 'a lazy dish in my dictionary means a dish that takes very little ' 
-                   + 'time to prepare but still delicious, ' 
+const dishesIntro = 'A lazy dish in my dictionary means a dish that takes very little ' 
+                   + 'time (less than ten minutes) to prepare but still delicious, ' 
                    + 'which has always been my goal. '
-                   + 'More dishes and recipes will be added.';
+                   + 'More dishes and recipes are coming.';
 
 const dishes = [
-        {src:"baked-sweet-peppers.jpg", alt:"Baked Sweet Peppers"}
-      ];                
+        {src:"baked-sweet-peppers.jpg", alt:"Baked Sweet Peppers"},
+        {src:"baked-sweet-peppers.jpg", alt:"Baked Bitter Peppers"},        
+      ];        
 
-class HaiyanDishes extends React.Component {
+const recipes = {
+    'Baked Sweet Peppers': ['Cut sweet peppers and other optional vegetables', 
+                            'Mix olive oil, salt', 
+                            'Bake at 350F for one hour'
+                           ],
+    'Baked Bitter Peppers': ['Cut bitter peppers and other optional vegetables', 
+                            'Mix olive oil, salt', 
+                            'Bake at 350F for one hour'
+                           ]
+};
+
+class HaiyanDishes extends Component {
 
   componentDidUpdate(prevProps, prevState) {
     console.log(`inside HaiyanDishes.js componentDidUpdate ... `);
@@ -26,20 +39,29 @@ class HaiyanDishes extends React.Component {
 
   render() {
     return (
-      <div className="gallery-container">
+      <Fragment>
         <div className="topic-top">
           {dishesIntro}
         </div>
         <div className="image-container">
           {
             dishes.map( (image, i)=> (
-                <div key={i}>
-                  <img src={srcPrefix+this.props.pname + '/' + image.src} 
-                        onClick={()=>this.props.openModal(image, i)} 
-                        alt={image.alt} />
-
-                    <p id="gallery-caption">{image.alt}</p>
-                
+                <div key={i} className="dish">
+                  <p id="gallery-caption">{image.alt}</p>
+                  <div className="dish-content">
+                    <div>
+                      <img src={srcPrefix+this.props.pname + '/' + image.src} 
+                            onClick={()=>this.props.openModal(image, i)} 
+                            alt={image.alt} />
+                    </div>
+                    <div className="recipe">
+                        <ol className="recipe-step">
+                          {recipes[image.alt].map( (step, i) => (
+                             <li key={i}>{step}</li>
+                          ) )}
+                        </ol>
+                    </div>
+                  </div>
                 </div>
               ) )
           }
@@ -63,7 +85,7 @@ class HaiyanDishes extends React.Component {
             </div>                                  
           </Modal>
         </div>
-      </div>
+      </Fragment>
     )
   }
 }
