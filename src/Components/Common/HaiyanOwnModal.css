@@ -1,0 +1,36 @@
+.haiyan-modal-overlay {
+	z-index: 1;	
+	position: fixed;
+    top: 1rem;
+    left: calc((100% - 650px) /2);
+    right: calc((100% - 650px) /2);
+    bottom: 1rem;
+	overflow-y: auto;
+    background-color: #d4d16d;
+}
+
+.haiyan-modal-overlay .close-times {
+	padding-right: 0.5em;
+	color: #aaa;
+	float: right;
+	font-size: 2.5em;
+	font-weight: bold;
+}
+
+.haiyan-modal-content {
+  background-color: #d4d16d;
+  width: 90%;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 1em 1em;
+  font-size: 1.2rem;
+  text-align: left;
+}
+
+@media screen and (max-width: 650px) {
+	.haiyan-modal-overlay {
+	    top: 2%;
+	    left: 2%;
+	    right: 2%;
+	}
+}

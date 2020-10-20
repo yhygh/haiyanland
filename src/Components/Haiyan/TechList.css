@@ -1,0 +1,60 @@
+#tech-main-grid {
+  width: 90vw;
+  max-width: 1200px;
+  margin: auto auto;
+  display: grid;
+  grid-row-gap: 1em;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr) );
+}
+
+#tech-main-grid a {
+  text-decoration: none;
+  font-weight: 500;
+}
+
+#tech-main-grid .main-grid-item {
+/*  align-content: center;*/
+}
+
+main-tech-title {
+/*  grid-area: 1 / 1 / span 1 / span 2;*/
+}
+
+.category-grid {
+  background-color: rgba(35, 150, 150);
+  margin: 1em;
+  grid-row-gap: 1em;
+  display: grid;
+  grid-template-rows: 2em auto;
+  align-content: start;
+/*  justify-content: center;*/
+  transition: all 800ms ease;
+}
+
+.category-grid:hover {
+  background-color: rgba(35, 150, 150, 0.8);
+  transform: scale(1.1);
+}
+
+.category-grid .category-grid-item {
+  color: black;
+  text-align: left;
+  margin: 10px;
+}
+
+.category-grid .category-grid-item-title {
+  font-weight: bold;
+  width: 30%;
+}
+
+
+/*@media screen and (min-width: 601px) {
+
+
+}
+
+
+@media screen and (min-width: 801px) {
+
+	
+}*/

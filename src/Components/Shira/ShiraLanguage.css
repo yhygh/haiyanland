@@ -1,0 +1,17 @@
+.lang-grid-container {
+  width: 95%;
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: auto;
+  justify-content: center;
+}
+
+.lang-grid-container img {
+  max-width: 300px;
+  border: outset;
+  border-color: #4b8282;
+  border-width: thick;
+}
+
+

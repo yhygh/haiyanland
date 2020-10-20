@@ -1,5 +1,24 @@
 This project is created for my own fun. 
 
+At the sametime, it made me learn more web technologies that I haven't had a chance to use at work. 
+
+
+
+TODO: 
+
+Fix the Click outside of the HaiyanOwnModal.
+
+Add another font for all titles.
+
+Refactor CSS files, change gallerymodal layout to grid.
+
+Create a video component. 
+
+Create a Map without using Google Map API (hey, I don't want to pay!) With my background is GIS, I will make my own map.
+
+
+
+
 
 ******************************************************************************************************
 

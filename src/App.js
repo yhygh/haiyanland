@@ -2,12 +2,12 @@ import React from 'react';
 // import logo from './logo.svg';
 import './App.css';
 
-
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
 import Home from './Home';
-import Haiyan from './Haiyan';
-import Shira from './Shira';
+import Haiyan from './Components/Haiyan';
+import Shira from './Components/Shira';
+
 
 /*
         <header className="App-header">
@@ -28,22 +28,28 @@ import Shira from './Shira';
 
         // <Top />
 
+
 // Rewrite the function in a class
-class App extends React.Component {  
+class App extends React.Component {
+
   render(){
+
+  const currCounter = state => ({counter: state.counter});
+
     return (
       <div className="App">
         <BrowserRouter> 
           <Switch>
             <Route path='/' exact component={Home} />
-            <Route path='/haiyan' exact component={Haiyan} />
-            <Route path='/shira' exact component={Shira} />            
-            <Route path='/' render={ () => <div>404</div>} />
+            <Route path='/haiyan' component={Haiyan} />
+            <Route path='/shira'  component={Shira} />
+            <Route path='/' render={ () => <div>404</div>} />            
           </Switch>
         </BrowserRouter>
       </div>
     );
   }
-}
+}   
 
 export default App;
+

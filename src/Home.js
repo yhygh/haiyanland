@@ -3,18 +3,38 @@ import bread from './bread.png';
 import './Home.css';
 import {Link} from 'react-router-dom';
 
+import HaiyanOwnModal from './Components/Common/HaiyanOwnModal';
+
 const items = [
-    {name: 'Haiyan',
-     page: '/haiyan',
-    },
     {name: 'Shira',
      page: '/shira',
-    }
+    },
+    {name: 'Haiyan',
+     page: '/haiyan',
+    }    
   ];
 
 class Home extends React.Component {
+  state = {
+    showModal: false
+  }
+
+  openModal = () => {
+    this.setState({showModal: true});
+  }
+
+  closeModal = () => {
+    this.setState({showModal: false});
+  }
+
   render() {
+    let haiyanIntroModal;
+    if (this.state.showModal) {
+      haiyanIntroModal = (<HaiyanOwnModal onClose={this.closeModal}/>);      
+    }
+
   	return (
+
       <div className="Home-container">
         <div className="Home-title">Welcome to Our Land!</div>
         <div>
@@ -24,11 +44,13 @@ class Home extends React.Component {
           {
             items.map((person, index) => (
               <li key={index}>
-                <Link to={person.page}>{person.name}'s World</Link>
+                <Link to={person.page}>{person.name}</Link>
               </li>
             ))
           }
         </ul>
+        <div className="home-button"><button onClick={this.openModal}>The Story of this Website</button></div>
+        {haiyanIntroModal}
       </div>
 
     );

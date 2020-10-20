@@ -1,0 +1,26 @@
+.footer {
+  margin-top: 1em;
+  font-size: 1.2em;
+  display: flex;
+  justify-content: center;
+}
+
+.contact {
+  margin-left: 2em;
+}
+
+.footer a{
+  text-decoration: none;
+}
+
+@media screen and (max-width: 500px) {
+  .footer {
+  	flex-direction: column;
+  }
+
+	.contact {
+	  margin-left: 0;
+	}
+
+}
+

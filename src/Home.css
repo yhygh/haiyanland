@@ -8,14 +8,14 @@
 .Home-title {
   font-size: 5vw;
   margin-top: 2rem;
-  margin-bottom: 6vh;
+  margin-bottom: 1.2rem;
   font-weight: bold
 }
 
 .Home-bread-img {
 	top: 2vh;
-	max-width: 50%;
-    max-height: 50%;
+	max-width: 38%;
+  max-height: 35vmin;
 }
 
 ul#home-personitem {
@@ -26,9 +26,71 @@ ul#home-personitem {
 }
 
 ul#home-personitem li{
-    padding: 1.375rem 0;
+    padding: 1rem 0;
     font-size: 4vw;
     font-weight: 600;
+}
+
+ul#home-personitem a{
+    text-decoration: none;
+}
+
+ul#home-personitem a:hover {
+    color: #d4d16d;
+}
+
+.home-button {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.home-button button {
+  border-color: rgb(209, 230, 28);
+  background: rgba(209, 230, 28, 0.5);
+  font-size: 1.1rem;
+  font-weight: 500;
+  font-family: 'Kalam', cursive;
+  transition: all 1s ease-in-out;
+}
+
+.home-button button:hover {
+    transform: scale(1.2);
+    background-color: orange;
+}
+
+
+@media (prefers-reduced-motion: no-preference) {
+  .Home-bread-logo {
+    animation: bread-spin 1 20s linear;
+  }
+}
+
+@keyframes bread-spin {
+  0% {
+    transform: skewX(0deg);
+  }
+  30% {
+    transform: skewX(45deg);
+  }
+  70% {
+    transform: skewX(-45deg);
+  }  
+  100% {
+    transform: skewX(0deg);    
+  }  
+}
+
+/* for off canvas hamburger menu */
+nav-hamburger {
+  width: 300px;
+  height: 100%;
+  position: absolute;
+  transform: translate(-300px, 0);
+  transition: transform 0.3s ease;
+}
+
+nav-hamburger.open {
+  transform: translate(0, 0);
 }
 
 @media screen and (max-width: 400px) {
@@ -40,8 +102,14 @@ ul#home-personitem li{
   ul#home-personitem li{
 	font-size: 5vw;
   }
-
 }
+
+/*@media screen and (max-width: 400px) {
+  nav-hamburger {
+    position: relative;
+    transform: translate(0, 0);
+  }	
+}*/
 
 @media screen and (min-width: 700px) {
 	.Home-title {
@@ -61,19 +129,4 @@ ul#home-personitem li{
 	ul#home-personitem li {
 		font-size: 2vw;
 	}
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .Home-bread-logo {
-    animation: bread-spin infinite 20s linear;
-  }
-}
-
-@keyframes bread-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
 }
